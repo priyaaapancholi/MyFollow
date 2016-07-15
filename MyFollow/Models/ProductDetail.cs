@@ -15,13 +15,15 @@ namespace MyFollow.Models
         [Required]
         [MaxLength(1100)]
         public string Detail { get; set; }
+
         public string Media { get; set; }
+
         [Required]
         [MaxLength(140)]
         public string Introduction{ get; set; }
 
-      
-        public Product product { get; set; }
+        public int Id { get; set; }
+        public Product Product { get; set; }
 
     }
 }

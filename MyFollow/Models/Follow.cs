@@ -11,11 +11,11 @@ namespace MyFollow.Models
     {
         [Key]
         public int FollowId { get; set; }
+         
+        public int UserId { get; set; }
+        public User User { get; set; }
 
-        [ForeignKey("UserId")]
-        public List<User> user { get; set; }
-
-        [ForeignKey("ProductId")]
-        public List<Product> product { get; set; }
+        public int ProductId { get; set; }
+        public Product Product { get; set; }
     }
 }
