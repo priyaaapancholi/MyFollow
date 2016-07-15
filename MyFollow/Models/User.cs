@@ -20,7 +20,7 @@ namespace MyFollow.Models
        
         public  override DateTime CreatedDate { get; set; }
         public  override DateTime LastModifiedDate { get; set; }
-        
+        public AddressInfo Address { get; set; }
         public string CompanyName { get; set; }
         public string WebsiteURL { get; set; }
         public int FoundedYear { get; set; }
@@ -35,7 +35,7 @@ namespace MyFollow.Models
 
 
 
-        public class Address
+        public class AddressInfo
         {
             [Required]
             public string Street1 { get; set; }
