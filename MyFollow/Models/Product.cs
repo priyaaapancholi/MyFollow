@@ -7,7 +7,7 @@ using System.Web;
 
 namespace MyFollow.Models
 {
-    public class Product
+    public class Product:CommonProperty
     {
         [Key]
         [Required]
@@ -15,7 +15,10 @@ namespace MyFollow.Models
         [Required]
         public string ProductName { get; set; }
         public string Description { get; set; }
-        public enum Type {Mobile,IOT,Web }
+        public override DateTime CreatedDate { get; set; }
+        public override DateTime LastModifiedDate { get; set; }
+        public enum Platform {Mobile,IOT,Web }
+        public Platform Type { get; set; } 
         [Required]
         public string HomepageURL { get; set; }
         [Required]
@@ -27,12 +30,12 @@ namespace MyFollow.Models
         public List<User> user { get; set; }
 
         public int ProductDetailId { get; set; }
-       [ForeignKey("ProductDetailId")]
+        [ForeignKey("ProductDetailId")]
         public virtual ProductDetail productdetail { get; set; }
 
-        public virtual ICollection<ProductDetail> PD { get; set; }
+        public virtual List<ProductDetail> PD { get; set; }
 
 
-        public ICollection<Follow> folllow { get; set; }
+        public List<Follow> folllow { get; set; }
     }
 }

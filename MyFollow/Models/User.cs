@@ -7,7 +7,7 @@ using System.Web;
 
 namespace MyFollow.Models
 {
-    public class User
+    public class User:CommonProperty
     {
         [Key]
         [Required]
@@ -17,9 +17,10 @@ namespace MyFollow.Models
         [Required]
         public DateTime DOB { get; set; }
         [Required]
-        public string Address { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public DateTime LastModifiedDate { get; set; }
+       
+        public  override DateTime CreatedDate { get; set; }
+        public  override DateTime LastModifiedDate { get; set; }
+        
         public string CompanyName { get; set; }
         public string WebsiteURL { get; set; }
         public int FoundedYear { get; set; }
@@ -28,20 +29,26 @@ namespace MyFollow.Models
         [ForeignKey("ProductId")]
         public List<Product> product { get; set; }
 
-        public ICollection<Follow> folllow { get; set; }
+        public List<Follow> folllow { get; set; }
 
 
 
 
 
-       /* public class AddressInfo
+        public class Address
         {
+            [Required]
             public string Street1 { get; set; }
+            [Required]
             public string Street2 { get; set; }
+            [Required]
             public string CityName { get; set; }
+            [Required]
             public string StateName { get; set; }
+            [Required]
             public int PIN { get; set; }
+            [Required]
             public int ContactNo { get; set; }
-        }*/
+        }
     }
 }
