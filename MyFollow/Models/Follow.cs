@@ -11,11 +11,16 @@ namespace MyFollow.Models
     {
         [Key]
         public int FollowId { get; set; }
-         
-        public int UserId { get; set; }
-        public User User { get; set; }
 
+
+        //refers relation between user and follow class..
+        public int UserId { get; set; }
+        [ForeignKey("UserId")]
+        public virtual User User { get; set; }
+
+        //refers relation between product and follow class..
         public int ProductId { get; set; }
-        public Product Product { get; set; }
+        [ForeignKey("ProductId")]
+        public virtual Product Product { get; set; }
     }
 }

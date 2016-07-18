@@ -7,13 +7,13 @@ using System.Web.Mvc;
 
 namespace MyFollow.Controllers
 {
-    public class ProductDetailController : Controller
+    public class ProductUpdateController : Controller
     {
-        // GET: ProductDetail
-        FollowContext db = new FollowContext();
+        // GET: ProductUpdate
+        ContextFollow db = new ContextFollow();
         public ActionResult Index()
         {
-            return View(db.ProductDetail.ToList());
+            return View(db.ProductUpdate.ToList());
         }
     }
 }

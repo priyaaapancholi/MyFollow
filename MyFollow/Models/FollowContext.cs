@@ -10,7 +10,7 @@ namespace MyFollow.Models
     {
         public DbSet<User> User { get; set; }
         public DbSet<Product> Product { get; set; }
-        public DbSet<ProductDetail> ProductDetail { get; set; }
+        public DbSet<ProductUpdate> ProductUpdate { get; set; }
         public DbSet<Follow> Follow { get; set; }
     }
 }

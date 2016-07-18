@@ -10,7 +10,7 @@ namespace MyFollow.Controllers
     public class FollowController : Controller
     {
         // GET: Follow
-        FollowContext db = new FollowContext();
+        ContextFollow db = new ContextFollow();
         public ActionResult Index()
         {
             return View(db.Follow.ToList());

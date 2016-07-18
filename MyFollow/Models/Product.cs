@@ -10,32 +10,39 @@ namespace MyFollow.Models
     public enum Platform { Mobile, IOT, Web }
     public class Product:CommonProperty
     {
+        
         [Required]
         public string ProductName { get; set; }
-
+        
+        [MaxLength(200)]
         public string Description { get; set; }
 
         public Platform Type { get; set; } 
 
         [Required]
+        [Url]
         public string HomepageURL { get; set; }
 
         [Required]
+        [Url]
         public string AppstoreURL { get; set; }
 
         [Required]
+        [Url]
         public string PlaystoreURL { get; set; }
 
+        //refers relation between productowner and product..
+        public int UserId { get; set; }
         [ForeignKey("UserId")]
-        public User User { get; set; }
-
-        public int ProductDetailId { get; set; }
-        [ForeignKey("ProductDetailId")]
-        public virtual ProductDetail Productdetail { get; set; }
-
-       
+        public virtual User User { get; set; }
 
 
-        public ICollection<Follow> Folllow { get; set; }
+       //refers relation between product and productupdates(details)..
+        public virtual ICollection<ProductUpdate> ProductUpdate { get; set; }
+
+        //refers relation between user and followproducts..
+        public virtual ICollection<Follow> Folllow { get; set; }
+
+
     }
 }

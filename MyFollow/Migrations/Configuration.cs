@@ -5,15 +5,14 @@ namespace MyFollow.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<MyFollow.Models.FollowContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<MyFollow.Models.ContextFollow>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
-            AutomaticMigrationDataLossAllowed = true;
         }
 
-        protected override void Seed(MyFollow.Models.FollowContext context)
+        protected override void Seed(MyFollow.Models.ContextFollow context)
         {
             //  This method will be called after migrating to the latest version.
 
